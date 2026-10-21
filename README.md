@@ -7,8 +7,15 @@ subtitle transcription and proofreading tool for media professionals.
 
 ```sh
 brew tap DaQI-X/tap
+brew trust DaQI-X/tap
 brew install --cask vv-transcribe
 ```
+
+`brew trust` is required because Homebrew 7+ refuses to load formulae or casks
+from third-party taps until you explicitly trust the tap; without it `brew install`
+fails with `Refusing to load cask daqi-x/tap/vv-transcribe from untrusted tap`.
+Homebrew normalises the tap name to lowercase, so `DaQI-X/tap` and `daqi-x/tap`
+are the same entry (`brew trust --json v1` shows what you have trusted).
 
 Apple Silicon and Intel Macs each get the matching DMG automatically.
 
@@ -45,6 +52,7 @@ brew uninstall --cask vv-transcribe
 # also removes app data, model cache and preferences
 brew uninstall --cask --zap vv-transcribe
 brew untap DaQI-X/tap
+brew untrust DaQI-X/tap
 ```
 
 ## Windows
