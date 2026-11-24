@@ -26,6 +26,8 @@ cask "vv-transcribe" do
   zap trash: [
     "~/Library/Application Support/Vv Transcribe",
     "~/Library/Caches/vv-asr-server",
+    "~/Library/HTTPStorages/vv-asr-server",
     "~/Library/Preferences/com.vv.transcribe.plist",
+    "~/Library/Application Support/CrashReporter/Vv Transcribe_*.plist",
   ]
 end
